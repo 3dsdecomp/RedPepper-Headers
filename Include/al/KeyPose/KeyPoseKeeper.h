@@ -16,7 +16,10 @@ class KeyPoseKeeper {
     KeyPose* mKeyPoses;
     int mKeyPoseAmount;
     int mCurrentKeyPoseIdx;
-    MoveType mMoveType;
+    union {
+        int mMoveTypeInt;
+        MoveType mMoveType;
+    };
     bool _10;
     bool _11;
 
@@ -25,6 +28,7 @@ public:
 
     void init(const ActorInitInfo& info);
 
+    const KeyPose* getCurrentKeyPose() const;
     const KeyPose* getNextKeyPose() const;
 };
 
