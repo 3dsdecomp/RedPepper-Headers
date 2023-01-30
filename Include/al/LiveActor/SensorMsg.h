@@ -17,6 +17,7 @@ enum SensorMsg {
     SensorMsg_PlayerBoomerangAttack = 20,
     SensorMsg_PlayerBoomerangReflect = 22,
     SensorMsg_PlayerBoomerangBreak = 23,
+    SensorMsg_ItemGet = 26,
     SensorMsg_FloorTouch = 27,
     SensorMsg_PlayerInvincibleTouch = 30,
     SensorMsg_34 = 34,
