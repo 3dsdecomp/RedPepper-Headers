@@ -18,6 +18,7 @@ class ByamlIter {
 
 public:
     ByamlIter();
+    ByamlIter(const ByamlIter& other);
     ByamlIter(const u8* data);
     ByamlIter(const u8* data, const u8* rootNode);
 
