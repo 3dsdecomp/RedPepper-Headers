@@ -8,6 +8,16 @@
 
 namespace al {
 
+class CameraUnknownParam {
+    u8 _0;
+
+public:
+    CameraUnknownParam()
+        : _0(0)
+    {
+    }
+};
+
 class Camera {
     const char* const mName;
 
@@ -23,7 +33,7 @@ public:
     int mInterpoleFrame;
     CameraParamVision* mVisionParam;
     CameraDashAngleTunerParam* mDashAngleTunerParam;
-    u8* _44;
+    CameraUnknownParam* mUnknownParam;
     CameraRotatorParam* mRotatorParam;
 
 public:
