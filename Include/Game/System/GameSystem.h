@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Game/System/CourseList.h"
+#include "al/Layout/LayoutKit.h"
+#include "al/Message/MessageSystem.h"
 #include "al/Nerve/NerveExecutor.h"
 #include "al/Sequence/Sequence.h"
 
@@ -7,12 +10,12 @@ class GameSystem : public al::NerveExecutor {
     al::Sequence* mCurrentSequence;
     void* _C;
     void* _10;
-    void* _14;
+    al::LayoutKit* mLayoutKit;
     void* _18;
-    void* _1C;
+    al::MessageSystem* mMessageSystem;
     void* _20;
     void* _24;
-    void* _28;
+    CourseList* mCourseList;
     void* _2C;
     void* _30;
     void* _34;
