@@ -11,4 +11,5 @@ class RootTask /* : public sead::Task */ {
     void* _1bc;
 
 public:
+    GameSystem* getGameSystem() const { return mGameSystem; }
 };

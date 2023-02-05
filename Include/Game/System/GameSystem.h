@@ -28,4 +28,6 @@ public:
     virtual void v6() {};
     virtual void v7() {};
     virtual void v8() {};
+
+    CourseList* getCourseList() const { return mCourseList; }
 };

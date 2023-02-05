@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Game/Player/PlayerActor.h"
+#include "Game/System/RootTask.h"
 #include "al/LiveActor/LiveActorKit.h"
 #include "al/Scene/SceneObjHolder.h"
 #include "al/System/SystemKit.h"
@@ -26,6 +27,7 @@ public:
 
     al::SceneObjHolder* getSceneObjHolder() const { return mSceneObjHolder; }
     void setSceneObjHolder(al::SceneObjHolder* holder) { mSceneObjHolder = holder; }
+    RootTask* getRootTask() const;
 };
 
 static_assert(sizeof(Application) == 0x60, "");
