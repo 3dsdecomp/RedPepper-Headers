@@ -16,12 +16,15 @@ class NerveStateCtrl {
     State* mStates;
     State* mCurrentState;
 
+    State* findStateInfo(const Nerve* nerve);
+
 public:
     NerveStateCtrl(int capacity);
 
-    bool updateCurrentState();
     void startState(const Nerve* nerve);
     void tryEndCurrentState();
+    bool updateCurrentState();
+    bool isCurrentStateEnd() const;
 
     const State* getCurrentState() const { return mCurrentState; }
 };
