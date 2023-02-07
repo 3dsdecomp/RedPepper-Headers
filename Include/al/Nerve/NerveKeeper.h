@@ -20,7 +20,7 @@ class NerveKeeper {
 public:
     NerveKeeper(IUseNerve* host, const Nerve* nrv, int maxNerveStates = 0);
 
-    const Nerve* getCurrentNerve();
+    const Nerve* getCurrentNerve() const;
     void initNerveAction(NerveActionCtrl* p) { mActionCtrl = p; }
 
     void update();
