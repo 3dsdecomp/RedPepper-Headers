@@ -11,7 +11,6 @@ enum ByamlDataType {
     ByamlDataType_Array = 0xC0,
     ByamlDataType_Hash = 0xC1,
     ByamlDataType_StringTable = 0xC2,
-    ByamlDataType_BinaryTable = 0xC3,
     ByamlDataType_Bool = 0xD0,
     ByamlDataType_Int = 0xD1,
     ByamlDataType_Float = 0xD2,
