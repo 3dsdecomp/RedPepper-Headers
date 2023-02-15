@@ -39,7 +39,7 @@ public:
 public:
     Camera(const char* name);
 
-    virtual void load(const al::ByamlIter* ticket);
+    virtual void load(const ByamlIter* ticket);
     virtual void v1();
     virtual void v2();
     virtual void v3();

@@ -5,9 +5,9 @@
 #include <sead/math/seadVector.h>
 
 class EnemyStateBlowDown : public al::ActorStateBase {
-    EnemyStateBlowDownParam* mBlowDownParam;
+    EnemyStateBlowDownParam* mParam;
     sead::Vector3f _14;
-    const char* _20;
+    const char* mAnimName;
     void* _24;
 
 public:

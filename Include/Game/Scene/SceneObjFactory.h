@@ -9,6 +9,7 @@ al::SceneObjHolder* createSceneObjHolder();
 } // namespace SceneObjFactory
 
 enum SceneObjType {
+    SceneObjType_CameraShaker = 1,
     SceneObjType_SwitchAreaDirector = 3,
     SceneObjType_AudioDirector = 4, // not sure
     SceneObjType_CoinRotater = 7,
