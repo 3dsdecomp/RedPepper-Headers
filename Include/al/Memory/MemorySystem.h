@@ -15,7 +15,7 @@ class MemorySystem {
     sead::FrameHeap* mSceneResourceHeap;
     sead::FrameHeap* mSceneHeap;
     sead::Heap* _14;
-    sead::Heap* _18;
+    sead::FrameHeap* mCourseSelectResourceHeap;
     sead::FrameHeap* mCourseSelectHeap;
     u8 unk1[0x20];
 
@@ -46,6 +46,7 @@ sead::ExpHeap* getSequenceHeap();
 sead::FrameHeap* getSceneResourceHeap();
 sead::FrameHeap* getSceneHeap();
 sead::FrameHeap* getCourseSelectHeap();
+sead::FrameHeap* getCourseSelectResourceHeap();
 
 void destroySceneHeap();
 

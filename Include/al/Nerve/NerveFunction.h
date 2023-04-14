@@ -18,6 +18,14 @@ inline bool isLessStep(const IUseNerve* p, int step)
     return p->getNerveKeeper()->getStep() < step;
 }
 #endif
+#ifdef __CC_ARM
+int getNerveStep(const IUseNerve* p);
+#else
+inline int getNerveStep(const IUseNerve* p)
+{
+    return p->getNerveKeeper()->getStep();
+}
+#endif
 bool isGreaterStep(const IUseNerve* p, int step);
 bool isGreaterEqualStep(const IUseNerve* p, int step);
 
