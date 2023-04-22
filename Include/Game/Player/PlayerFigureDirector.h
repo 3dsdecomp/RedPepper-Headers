@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Game/Player/PlayerAudio.h"
+
 enum EPlayerFigure {
     EPlayerFigure_Normal,
     EPlayerFigure_Mini,
@@ -8,20 +10,33 @@ enum EPlayerFigure {
     EPlayerFigure_Boomerang,
     EPlayerFigure_RaccoonDogSpecial,
     EPlayerFigure_RaccoonDogWhite
+};
 
+// has table of which Figure to switch to when damagaed
+class PlayerFigureLoss {
+public:
+    virtual void update(EPlayerFigure*, const EPlayerFigure&);
+};
+
+class PlayerFigureTransformer {
 };
 
 class PlayerFigureDirector {
-    int _0;
+#ifndef __CC_ARM
+public:
+#endif
+    EPlayerFigure mLastFigure;
     EPlayerFigure mFigure;
     void* _8;
     void* _C;
-    int _10;
-    void* _14;
+    bool mHasFigureChanged;
+    bool _11;
+    IUsePlayerAudio* mAudioUser;
 
 public:
     void change(const EPlayerFigure&);
     void lose();
+    void set(const EPlayerFigure&);
 
     EPlayerFigure getFigure() const { return mFigure; }
 };

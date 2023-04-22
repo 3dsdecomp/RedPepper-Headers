@@ -1,10 +1,63 @@
 #pragma once
 
 #include "Game/Player/PlayerActorInitInfo.h"
+#include "PlayerFigureDirector.h"
 #include "al/LiveActor/ActorInitInfo.h"
 #include <sead/math/seadVector.h>
 
-class PlayerModelHolder {
+class IUsePlayerModelChanger {
 public:
-    PlayerModelHolder(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, long long);
+    virtual void change(const EPlayerFigure& figure);
+};
+
+class IUsePlayerModelShowHide {
+public:
+    virtual void show();
+    virtual void hide();
+    virtual bool isHidden() const;
+};
+
+class IUsePlayerModelShadowShowHide {
+public:
+    virtual void hideShadow();
+    virtual void showShadow();
+};
+
+class IUsePlayerModelSilhouetteShowHide {
+public:
+    virtual void showSilhouette();
+    virtual void hideSilhouette();
+    virtual bool isSilhouetteHidden() const;
+};
+
+class PlayerModel;
+class PlayerModelHolder : public IUsePlayerModelChanger, public IUsePlayerModelShowHide, public IUsePlayerModelShadowShowHide, public IUsePlayerModelSilhouetteShowHide {
+    PlayerModel* mModels[7];
+    EPlayerFigure mCurrentFigure;
+    bool _30;
+    bool mIsHidden;
+    bool mIsShadowHidden;
+    bool mIsSilhouetteHidden;
+    void* _34[7];
+
+public:
+    PlayerModelHolder(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
+
+    virtual void change(const EPlayerFigure& figure) override;
+    virtual void show() override;
+    virtual void hide() override;
+    virtual bool isHidden() const override;
+    virtual void showSilhouette() override;
+    virtual void hideSilhouette() override;
+    virtual bool isSilhouetteHidden() const override;
+    virtual void hideShadow() override;
+    virtual void showShadow() override;
+
+    static PlayerModel* createNormalPlayerModel(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
+    static PlayerModel* createMiniPlayerModel(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
+    static PlayerModel* createFirePlayerModel(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
+    // PlayerModelHolder::createRaccoonDogPlayerModel
+    static PlayerModel* createBoomerangPlayerModel(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
+    // PlayerModelHolder::createRaccoonDogSpecialPlayerModel
+    // PlayerModelHolder::createRaccoonDogWhitePlayerModel
 };

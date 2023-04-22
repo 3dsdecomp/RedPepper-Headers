@@ -5,6 +5,7 @@
 #include "Game/Player/PlayerFigureDirector.h"
 #include "Game/Player/PlayerProperty.h"
 #include "Game/Player/PlayerTrigger.h"
+#include "PlayerAudio.h"
 
 class Player {
 #ifndef __CC_ARM
@@ -42,7 +43,7 @@ public:
     void* _74;
     void* _78;
     void* _7C;
-    void* _80;
+    PlayerAudio* mPlayerAudio;
     void* _84;
     void* _88;
     void* _8C;
