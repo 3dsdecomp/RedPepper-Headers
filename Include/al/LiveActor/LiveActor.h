@@ -21,6 +21,7 @@
 
 class alActorPoseFunction;
 class alLiveActorFunction;
+class ActorLightCtrl;
 
 namespace al {
 
@@ -88,7 +89,7 @@ protected:
     StageSwitchKeeper* mStageSwitchKeeper;
     RailKeeper* mRailKeeper;
     ShadowKeeper* mShadowKeeper;
-    class ActorLightKeeper* mActorLightKeeper;
+    ActorLightCtrl* mActorLightCtrl;
     void* _4C;
     SubActorKeeper* mSubActorKeeper;
 
