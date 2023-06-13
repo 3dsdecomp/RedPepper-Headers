@@ -43,15 +43,15 @@ class PlayerModelHolder : public IUsePlayerModelChanger, public IUsePlayerModelS
 public:
     PlayerModelHolder(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
 
-    virtual void change(const EPlayerFigure& figure) override;
-    virtual void show() override;
-    virtual void hide() override;
-    virtual bool isHidden() const override;
-    virtual void showSilhouette() override;
-    virtual void hideSilhouette() override;
-    virtual bool isSilhouetteHidden() const override;
-    virtual void hideShadow() override;
-    virtual void showShadow() override;
+    virtual void change(const EPlayerFigure& figure);
+    virtual void show();
+    virtual void hide();
+    virtual bool isHidden() const;
+    virtual void showSilhouette();
+    virtual void hideSilhouette();
+    virtual bool isSilhouetteHidden() const;
+    virtual void hideShadow();
+    virtual void showShadow();
 
     static PlayerModel* createNormalPlayerModel(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
     static PlayerModel* createMiniPlayerModel(const al::ActorInitInfo& info, const PlayerActorInitInfo& playerInfo, const sead::Vector3f* transPtr, const sead::Vector3f* rotatePtr, u64 something);
