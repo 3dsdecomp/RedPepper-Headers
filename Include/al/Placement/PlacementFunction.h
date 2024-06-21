@@ -20,9 +20,12 @@ inline bool tryGetArg(bool* out, const ActorInitInfo& info, const char* argName)
 inline bool tryGetArg(float* out, const ActorInitInfo& info, const char* argName) { return tryGetArg(out, getPlacementInfo(info), argName); }
 inline bool tryGetArg(int* out, const ActorInitInfo& info, const char* argName) { return tryGetArg(out, getPlacementInfo(info), argName); }
 #endif
+bool tryGetArg0(int* out, const ActorInitInfo& info);
 bool tryGetArg0(int* out, const PlacementInfo& info);
 bool tryGetArg0(float* out, const ActorInitInfo& info);
 bool tryGetArg1(float* out, const ActorInitInfo& info);
+bool tryGetArg2(float* out, const ActorInitInfo& info);
+bool tryGetArg3(float* out, const ActorInitInfo& info);
 bool tryGetArg3(int* out, const ActorInitInfo& info);
 bool tryGetStringArg(const char** out, const ActorInitInfo& info, const char* argName);
 bool tryGetStringArg(const char** out, const PlacementInfo& info, const char* argName);
