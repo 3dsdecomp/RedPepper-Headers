@@ -14,4 +14,7 @@ public:
     void startScene();
 };
 
+struct EffectUserInfo { }; // < guessed name
+struct EffectSystemInfo { };
+
 } // namespace al

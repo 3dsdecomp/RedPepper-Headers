@@ -9,7 +9,8 @@ public:
     sead::Vector3f mTrans;
     sead::Vector3f mFront;
     sead::Vector3f mUp;
-    u8 _C[0x54];
+    sead::Vector3f mVelocity;
+    u8 _30[0x48];
 
 public:
     void setFrontVec(const sead::Vector3f& front);
