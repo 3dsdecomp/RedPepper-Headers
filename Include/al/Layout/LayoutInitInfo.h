@@ -1,5 +1,6 @@
 #pragma once
 
+#include "LayoutKit.h"
 #include "al/Execute/ExecuteDirector.h"
 #include "al/LiveActor/LiveActorKit.h"
 
@@ -14,5 +15,6 @@ public:
 };
 
 void initLayoutInitInfo(LayoutInitInfo* info, LiveActorKit*); // why LiveActorKit ?
+void initLayoutInitInfo(LayoutInitInfo* info, LayoutKit*);
 
 } // namespace al

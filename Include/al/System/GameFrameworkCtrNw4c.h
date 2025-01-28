@@ -48,7 +48,7 @@ public:
     virtual void unk9();
     virtual void presentBtm_();
     virtual void swapBuffer_();
-    virtual void waitForVBLank_();
+    virtual void waitForVBlank_();
     virtual void clearFrameBuffers_();
 };
 
