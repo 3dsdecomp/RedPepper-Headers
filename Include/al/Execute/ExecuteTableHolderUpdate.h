@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ExecutorListBase.h"
 #include "al/Execute/ExecuteOrder.h"
 #include "al/Functor/FunctorBase.h"
 
@@ -8,8 +9,11 @@ namespace al {
 class IUseExecutor;
 
 class ExecuteTableHolderUpdate {
-    int _0;
-    int _4;
+#ifndef __CC_ARM
+public:
+#endif
+    int mNumExecutorLists;
+    ExecutorListBase** mExecutorLists;
     int _8;
     int _C;
     int _10;
@@ -31,8 +35,8 @@ public:
 
     void init(const ExecuteOrder* order, int);
     void createExecutorListTable();
-    void tryRegisterUser(al::IUseExecutor* p, const char *name);
-    void tryRegisterFunctor(const al::FunctorBase& base, const char *name);
+    void tryRegisterUser(al::IUseExecutor* p, const char* name);
+    void tryRegisterFunctor(const al::FunctorBase& base, const char* name);
 
     friend class ExecuteDirector;
 };
