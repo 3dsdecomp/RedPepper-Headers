@@ -1,16 +1,20 @@
 #pragma once
 
+#include "ExecutorListBase.h"
 #include "al/Execute/ExecuteOrder.h"
-#include "al/Functor/FunctorBase.h" 
+#include "al/Functor/FunctorBase.h"
 
 namespace al {
 
 class IUseExecutor;
 
 class ExecuteTableHolderDraw {
-    int _0;
-    int _4;
-    int _8;
+#ifndef __CC_ARM
+public:
+#endif
+    const char* mName;
+    int mNumExecutorLists;
+    ExecutorListBase** mExecutorLists;
     int _C;
     int _10;
     int _14;

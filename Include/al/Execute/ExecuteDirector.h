@@ -32,6 +32,8 @@ public:
     void registerFunctorDraw(const al::FunctorBase& base, const char* str);
 
     ExecuteTableHolderUpdate* getUpdateTable() const { return mUpdateTable; }
+    ExecuteTableHolderDraw* getDrawTable(int idx) const { return mDrawTables[idx]; }
+    int getNumDrawTables() const { return mDrawTableAmount; }
 
     friend class LayoutKit;
 };
